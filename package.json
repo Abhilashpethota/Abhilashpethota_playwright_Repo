@@ -1,0 +1,30 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regression": "npx playwright test",
+    "WebTests": "npx playwright test  --grep @Web",
+    "APItests": "npx playwright test  --grep @API",
+    "generate:report": "allure generate allure-results --clean -o allure-report",
+    "open:report": "allure open allure-report",
+    "test": "npm run regression && npm run generate:report && npm run open:report",
+    "multipleworkers": "npx playwright test --config=playwright.config1.js --workers=4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "allure": "^3.8.2",
+    "allure-playwright": "^3.8.0"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.8.0",
+    "exceljs": "^3.4.0",
+    "xlsx": "^0.18.5"
+  }
+}
