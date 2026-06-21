@@ -14,6 +14,7 @@
      await loginPage.goTo();
      await loginPage.validLogin(username,password);
      const dashboardPage = poManager.getDashboardPage();
+     
      await dashboardPage.searchProductAddCart(productName);
      await dashboardPage.navigateToCart();
 
@@ -30,4 +31,4 @@
    await ordersHistoryPage.searchOrderAndSelect(orderId);
    expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
  }
- );git add .
+ );
